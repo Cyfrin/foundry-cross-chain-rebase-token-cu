@@ -4,7 +4,7 @@ This is a section of the Cyfrin Foundry Solidity course.
 
 # About
 
-This project is a cross-chain rebase token where users can depost ETH in exchange for rebase tokens which accrue rewards over time.
+This project is a cross-chain rebase token where users can deposit ETH in exchange for rebase tokens which accrue rewards over time.
 
 - [Foundry Cross Chain Rebase Token](#foundry-cross-chain-rebase-token)
 - [About](#about)
