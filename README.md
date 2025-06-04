@@ -12,6 +12,7 @@ This project is a cross-chain rebase token where users can depost ETH in exchang
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
 - [Updates](#updates)
+- [Frontend DApp](#frontend-dapp)
 - [Usage](#usage)
   - [Start a local node](#start-a-local-node)
   - [Deploy](#deploy)
@@ -42,6 +43,31 @@ forge build
 ```
 
 # Updates
+
+# Frontend DApp
+
+## 🌉 Full Stack Implementation
+
+This project now includes a **complete React frontend** that allows users to interact with the cross-chain rebase token system through a user-friendly interface.
+
+**🔗 [Frontend DApp Repository](https://github.com/triantafd/rebase-token-bridge-dapp.git)**
+
+### Features:
+- **Deposit ETH** to the vault on Sepolia and receive rebase tokens
+- **Bridge tokens** from Sepolia to Arbitrum Sepolia using Chainlink CCIP
+- **Real-time balance tracking** across multiple chains
+- **Wallet integration** (MetaMask, WalletConnect)
+- **Transaction status monitoring** with user-friendly feedback
+
+### Deployed Contracts:
+- ✅ **Sepolia**: Vault and rebase token contracts deployed
+- ✅ **Arbitrum Sepolia**: Cross-chain pool contracts deployed
+- ✅ **CCIP Configuration**: Proper Chainlink CCIP setup for cross-chain bridging
+
+### Additional Script:
+- `bridgeToArbitrum.sh` - Complete deployment script for Arbitrum Sepolia with official CCIP addresses
+
+This implementation transforms the course from a CLI-only experience into a complete, production-ready DApp that students can use through a web interface.
 
 # Usage
 
