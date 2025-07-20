@@ -32,12 +32,12 @@ contract Vault {
         if (_amount == type(uint256).max) {
             _amount = i_rebaseToken.balanceOf(msg.sender);
         }
+        emit Redeem(msg.sender, _amount);
         i_rebaseToken.burn(msg.sender, _amount);
         // executes redeem of the underlying asset
         (bool success,) = payable(msg.sender).call{value: _amount}("");
         if (!success) {
             revert Vault__RedeemFailed();
         }
-        emit Redeem(msg.sender, _amount);
     }
 }
