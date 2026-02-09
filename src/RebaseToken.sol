@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
+import {ERC20} from "@openzeppelin/contracts@5.0.2/token/ERC20/ERC20.sol";
+import {Ownable} from "@openzeppelin/contracts@5.0.2/access/Ownable.sol";
+import {AccessControl} from "@openzeppelin/contracts@5.0.2/access/AccessControl.sol";
 
 /*
 * @title RebaseToken

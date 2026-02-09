@@ -5,9 +5,11 @@ libs = ["lib"]
 rpc_endpoints = { eth = "https://eth-sepolia.g.alchemy.com/v2/mwHkM74gwkO6kdWQKCYBRWdbDUnhZB7E", arb = "https://arb-sepolia.g.alchemy.com/v2/mwHkM74gwkO6kdWQKCYBRWdbDUnhZB7E", zksync = "https://sepolia.era.zksync.dev"}
 
 remappings = [
-    '@openzeppelin/=lib/openzeppelin-contracts/',
-    '@ccip=lib/ccip/',
-    '@chainlink-local/=lib/chainlink-local/',
+    "forge-std/=lib/forge-std/src/",
+    "@ccip/contracts/=lib/chainlink-ccip/chains/evm/contracts/",
+    "@openzeppelin/contracts@4.8.3/=lib/openzeppelin-contracts-4.8.3/contracts/",
+    "@openzeppelin/contracts@5.0.2/=lib/openzeppelin-contracts-5.0.2/contracts/",
+    "@chainlink-local/=lib/chainlink-local/"
 ]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
