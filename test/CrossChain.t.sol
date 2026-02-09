@@ -4,13 +4,13 @@ pragma solidity 0.8.24;
 import {console, Test} from "forge-std/Test.sol";
 
 import {CCIPLocalSimulatorFork, Register} from "@chainlink-local/src/ccip/CCIPLocalSimulatorFork.sol";
-import {TokenPool} from "@ccip/contracts/src/v0.8/ccip/pools/TokenPool.sol";
-import {RegistryModuleOwnerCustom} from "@ccip/contracts/src/v0.8/ccip/tokenAdminRegistry/RegistryModuleOwnerCustom.sol";
-import {TokenAdminRegistry} from "@ccip/contracts/src/v0.8/ccip/tokenAdminRegistry/TokenAdminRegistry.sol";
-import {RateLimiter} from "@ccip/contracts/src/v0.8/ccip/libraries/RateLimiter.sol";
-import {IERC20} from "@ccip/contracts/src/v0.8/vendor/openzeppelin-solidity/v4.8.3/contracts/token/ERC20/IERC20.sol";
-import {IRouterClient} from "@ccip/contracts/src/v0.8/ccip/interfaces/IRouterClient.sol";
-import {Client} from "@ccip/contracts/src/v0.8/ccip/libraries/Client.sol";
+import {TokenPool} from "@ccip/contracts/pools/TokenPool.sol";
+import {RegistryModuleOwnerCustom} from "@ccip/contracts/tokenAdminRegistry/RegistryModuleOwnerCustom.sol";
+import {TokenAdminRegistry} from "@ccip/contracts/tokenAdminRegistry/TokenAdminRegistry.sol";
+import {RateLimiter} from "@ccip/contracts/libraries/RateLimiter.sol";
+import {IERC20} from "@openzeppelin/contracts@4.8.3/token/ERC20/IERC20.sol";
+import {IRouterClient} from "@ccip/contracts/interfaces/IRouterClient.sol";
+import {Client} from "@ccip/contracts/libraries/Client.sol";
 
 import {RebaseToken} from "../src/RebaseToken.sol";
 
