@@ -7,6 +7,7 @@ import {RebaseToken} from "../src/RebaseToken.sol";
 import {Vault} from "../src/Vault.sol";
 
 import {IRebaseToken} from "../src/interfaces/IRebaseToken.sol";
+import {IAccessControl} from "@openzeppelin/contracts/access/IAccessControl.sol";
 
 contract RebaseTokenTest is Test {
     RebaseToken public rebaseToken;
@@ -15,6 +16,7 @@ contract RebaseTokenTest is Test {
     address public user = makeAddr("user");
     address public owner = makeAddr("owner");
     uint256 public SEND_VALUE = 1e5;
+    bytes32 private constant MINT_AND_BURN_ROLE = keccak256("MINT_AND_BURN_ROLE");
 
     function addRewardsToVault(uint256 amount) public {
         // send some rewards to the vault using the receive function
@@ -109,7 +111,7 @@ contract RebaseTokenTest is Test {
         // Deposit funds
         vm.startPrank(user);
         uint256 interestRate = rebaseToken.getInterestRate();
-        vm.expectRevert();
+        vm.expectRevert(abi.encodeWithSelector(IAccessControl.AccessControlUnauthorizedAccount.selector, user, MINT_AND_BURN_ROLE));
         rebaseToken.mint(user, SEND_VALUE, interestRate);
         vm.stopPrank();
     }
@@ -117,7 +119,7 @@ contract RebaseTokenTest is Test {
     function testCannotCallBurn() public {
         // Deposit funds
         vm.startPrank(user);
-        vm.expectRevert();
+        vm.expectRevert(abi.encodeWithSelector(IAccessControl.AccessControlUnauthorizedAccount.selector, user, MINT_AND_BURN_ROLE));
         rebaseToken.burn(user, SEND_VALUE);
         vm.stopPrank();
     }
